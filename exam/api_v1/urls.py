@@ -5,14 +5,15 @@ from api_v1 import views
 
 router = routers.DefaultRouter()
 
+# TODO register your views here, also create url patterns
 
 # router.register(r'movies', views.MovieViewSet)
 #
 #
-# app_name = 'api_v1'
-#
-# urlpatterns = [
-#     path('', include(router.urls)),
-#     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-# ]
-#
+app_name = 'api_v1'
+
+urlpatterns = [
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+]
+
