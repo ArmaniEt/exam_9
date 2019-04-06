@@ -2,17 +2,20 @@ import {ADD_TO_BASKET} from "../actions/basket";
 
 
 const initialState = {
-    basket: null
+    basket: []
 };
 
 
 const basketReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_BASKET:
-            console.log(action.basket);
+            const item = action.basket;
+            let newBasket = state.basket;
+            newBasket.push(item);
+            localStorage.setItem('fulledBasket', newBasket);
             return {
                 ...state,
-                basket: action.basket,
+                basket: newBasket
 
             };
         default:

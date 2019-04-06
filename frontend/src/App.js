@@ -9,13 +9,14 @@ import {connect} from "react-redux";
 import {tokenLogin} from "./store/actions/token-login";
 import Login from "./containers/Login/Login";
 import Logout from "./containers/Logout/Logout";
+import Basket from "./containers/Basket/Basket";
+import AuthRoute from "./components/AuthRoute/AuthRoute";
 
 class App extends Component {
     componentDidMount() {
         this.props.tokenLogin();
 
     };
-
 
     render() {
         return (
@@ -24,6 +25,7 @@ class App extends Component {
                     <Switch>
                         <Route path="/goods/:id" component={GoodDetail}/>
                         <Route path="/logout" component={Logout}/>
+                        <AuthRoute path="/basket" component={Basket}/>
                         <Route path="/login" component={Login}/>
                         <Route path="/" component={GoodList}/>
                     </Switch>

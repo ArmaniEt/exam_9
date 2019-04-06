@@ -33,23 +33,28 @@ class Menu extends Component {
 
                 </ul>
                 <ul className='navbar-nav ml-auto'>
-                    { username ?
-                        <li className="nav-link text-white">
-                            Привет {username}!
-                        </li> : null
-                    }
-                    {[
-                        <MenuItem key='login' to="/login">Войти</MenuItem>,
-                        <MenuItem to="/logout" key="logout">Выйти</MenuItem>
+                    {username ?
+                        [
+                            <li key='greetings' className="nav-link text-white">Привет {username}!</li>,
+                            <MenuItem key='basket' to="/basket">Корзина ({this.props.basket.basket.length})</MenuItem>,
+                            <MenuItem to="/logout" key="logout">Выйти</MenuItem>
 
-                    ]}
+                        ] :
+                        [
+                            <MenuItem key='login' to="/login">Войти</MenuItem>
+                        ]
+                    }
                 </ul>
             </div>
         </Fragment>
     }
 }
 
-const mapStateToProps = (state) => ({auth: state.auth});
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    basket: state.basket
+
+});
 const mapDispatchToProps = dispatch => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);
