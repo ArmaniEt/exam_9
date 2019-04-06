@@ -1,0 +1,145 @@
+[
+{
+  "model": "webapp.category",
+  "pk": 1,
+  "fields": {
+    "name": "\u0411\u044b\u0442\u043e\u0432\u0430\u044f \u0422\u0435\u0445\u043d\u0438\u043a\u0430",
+    "description": "\u0417\u0434\u0435\u0441\u044c \u043f\u0440\u043e\u0434\u0430\u0435\u0442\u0441\u044f \u0431\u044b\u0442\u043e\u0432\u0430\u044f \u0442\u0435\u0445\u043d\u0438\u043a\u0430"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 2,
+  "fields": {
+    "name": "\u041e\u0434\u0435\u0436\u0434\u0430",
+    "description": "\u0417\u0434\u0435\u0441\u044c \u043f\u0440\u043e\u0434\u0430\u0435\u0442\u0441\u044f \u043e\u0434\u0435\u0436\u0434\u0430"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 3,
+  "fields": {
+    "name": "\u041f\u0440\u043e\u0434\u0443\u043a\u0442\u044b",
+    "description": "\u0417\u0434\u0435\u0441\u044c \u043f\u0440\u043e\u0434\u0430\u044e\u0442\u0441\u044f \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b \u043f\u0438\u0442\u0430\u043d\u0438\u044f"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 4,
+  "fields": {
+    "name": "\u0413\u0430\u0441\u0442\u0440\u043e\u043d\u043e\u043c",
+    "description": "\u0417\u0434\u0435\u0441\u044c \u0431\u0443\u0434\u0443\u0442 \u043c\u044f\u0441\u043d\u044b\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b."
+  }
+},
+{
+  "model": "webapp.good",
+  "pk": 1,
+  "fields": {
+    "name": "\u0420\u0438\u0441\u043e\u0432\u0430\u0440\u043a\u0430",
+    "description": "\u041e\u0442\u043b\u0438\u0447\u043d\u043e \u0432\u0430\u0440\u0438\u0442 \u0440\u0438\u0441 :)",
+    "arrival_date": "2019-04-06T06:41:02Z",
+    "price": "2000.50",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.good",
+  "pk": 2,
+  "fields": {
+    "name": "\u0414\u0436\u0438\u043d\u0441\u044b",
+    "description": "\u041b\u0435\u0432\u0430\u0439\u0441\u044b.",
+    "arrival_date": "2019-04-06T06:45:06Z",
+    "price": "300.00",
+    "categories": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.good",
+  "pk": 3,
+  "fields": {
+    "name": "\u041a\u043e\u043b\u0431\u0430\u0441\u0430",
+    "description": "\u0414\u043e\u043a\u0442\u043e\u0440\u0441\u043a\u0430\u044f",
+    "arrival_date": "2019-04-06T06:43:39Z",
+    "price": "400.00",
+    "categories": [
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "webapp.good",
+  "pk": 4,
+  "fields": {
+    "name": "\u041f\u044b\u043b\u0435\u0441\u043e\u0441",
+    "description": "\u0421\u043e\u0441\u0435\u0442 \u043f\u044b\u043b\u044c \u0438 \u0433\u0440\u044f\u0437\u044c",
+    "arrival_date": "2019-04-06T06:49:59Z",
+    "price": "3500.00",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.photo",
+  "pk": 1,
+  "fields": {
+    "good": 2,
+    "photo": "posters/IMG_1742_ijuK0bG.jpg"
+  }
+},
+{
+  "model": "webapp.photo",
+  "pk": 2,
+  "fields": {
+    "good": 3,
+    "photo": "posters/sausage-1.jpg"
+  }
+},
+{
+  "model": "webapp.photo",
+  "pk": 3,
+  "fields": {
+    "good": 1,
+    "photo": "posters/8d2f8c73918a4ffa92c160333f564838.png"
+  }
+},
+{
+  "model": "webapp.photo",
+  "pk": 4,
+  "fields": {
+    "good": 2,
+    "photo": "posters/d89c532d67e81757ecdde7c6e2n9--vintazh-vintazhnye-dzhinsy-levi-039-s-525.jpg"
+  }
+},
+{
+  "model": "webapp.photo",
+  "pk": 5,
+  "fields": {
+    "good": 1,
+    "photo": "posters/steba-rk-2_images_3150574199.jpg"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$RRUhS4Yhtn3H$pOBwY0E9ewTL0BcDHJPGTE8DM//FLxr0U9l1Qa5BZwI=",
+    "last_login": "2019-04-05T18:35:20.960Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-04-05T17:09:46.018Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
