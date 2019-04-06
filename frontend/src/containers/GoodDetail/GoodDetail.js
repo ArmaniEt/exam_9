@@ -24,7 +24,9 @@ class GoodDetail extends Component {
             slidesToScroll: 1
         };
         const {good} = this.props.goodDetail;
+        const token = localStorage.getItem('auth-token');
         if (!good) return null;
+        const date = new Date(good.arrival_date);
         return (
             <Fragment>
                 <div className="col-4 m-auto">
@@ -43,10 +45,16 @@ class GoodDetail extends Component {
                             <p className="card-text">{good.description}</p>
                         </div>
                         <div className="card-footer">
-                            <p>Дата поступления товара: {good.arrival_date}</p>
+                            <p className='text-center'>Цена: {good.price} сом</p>
+                            <p className='text-center'>Дата поступления товара: {date.toLocaleDateString()}</p>
                         </div>
-                        <button onClick={() => this.props.addToBasket(good)} type="button" className="btn btn-primary">Добавить в корзину</button>
-                        <NavLink className="text-center m-3" to="/">Оформить заказ</NavLink>
+                        { token ?
+                            <button onClick={() => this.props.addToBasket(good)} type="button" className="btn btn-primary">Добавить в корзину</button>
+                            : null
+                        }
+                        {this.props.basket.basket.length > 0  ?
+                            <NavLink className="text-center m-3" to="/basket">Оформить заказ</NavLink> : null
+                        }
                     </div>
                 </div>
             </Fragment>
@@ -57,6 +65,7 @@ class GoodDetail extends Component {
 const mapStateToProps = state => {
     return {
         goodDetail: state.goodDetail,
+        basket: state.basket
     }
 };
 

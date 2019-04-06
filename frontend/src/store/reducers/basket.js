@@ -12,7 +12,6 @@ const basketReducer = (state = initialState, action) => {
             const item = action.basket;
             let newBasket = state.basket;
             newBasket.push(item);
-            localStorage.setItem('fulledBasket', newBasket);
             return {
                 ...state,
                 basket: newBasket

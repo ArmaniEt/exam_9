@@ -13,8 +13,11 @@ class Basket extends Component {
                             </div>
                             <h5 className="card-header text-center">{orderedGood.name}</h5>
                             <div className="card-body">
-                                <p className="card-text">{orderedGood.description}</p>
+                                <p className="card-text">
+                                    {orderedGood.description}
+                                    </p>
                             </div>
+                            <p className="card-footer text-center">Цена: {orderedGood.price} сом</p>
                         </div>
                     </Fragment>
                 })
