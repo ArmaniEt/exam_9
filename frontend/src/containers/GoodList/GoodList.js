@@ -1,12 +1,12 @@
 import React, {Fragment, Component} from 'react';
 import GoodCard from "../../components/GoodCard/GoodCard";
-// import {loadMovies} from "../../store/actions/good-list";
 import {connect} from "react-redux";
+import {loadGoods} from "../../store/actions/good-list";
 
 
 class GoodList extends Component {
     componentDidMount() {
-        //this.props.loadGoods();
+        this.props.loadGoods();
     }
 
     // redirectTo = () => {
@@ -19,8 +19,7 @@ class GoodList extends Component {
                 <div className='row'>
                     {this.props.goods.map(good => {
                         return <div className='col-xs-12 col-sm-6 col-lg-4 mt-3' key={good.id}>
-                            <GoodCard
-                                       good={good}/>
+                            <GoodCard good={good}/>
                         </div>
                     })}
                 </div>
@@ -34,4 +33,5 @@ const mapDispatchToProps = (dispatch) => ({
     loadGoods: () => dispatch(loadGoods()),
 
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(GoodList);

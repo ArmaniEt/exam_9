@@ -3,6 +3,7 @@ import {Route, Switch} from 'react-router';
 import {BrowserRouter} from 'react-router-dom';
 import './App.css';
 import Layout from "./components/Layout/Layout";
+import GoodList from "./containers/GoodList/GoodList";
 
 class App extends Component {
     render() {
@@ -10,7 +11,7 @@ class App extends Component {
             <BrowserRouter>
                 <Layout>
                     <Switch>
-                       <Route/>
+                       <Route path="/" component={GoodList}/>
                     </Switch>
                 </Layout>
             </BrowserRouter>
