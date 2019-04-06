@@ -3,6 +3,8 @@ import {connect} from "react-redux";
 import {loadGood} from "../../store/actions/good-detail";
 import GoodCategories from "../../components/GoodCategories/GoodCategories";
 import Slider from 'react-slick';
+import {NavLink} from "react-router-dom";
+import {addToBasket} from "../../store/actions/basket";
 
 
 class GoodDetail extends Component {
@@ -28,9 +30,9 @@ class GoodDetail extends Component {
                 <div className="col-4 m-auto">
                     <div className="card">
                         <Slider {...settings}>
-                            {good.good_photo.map(photo => {
+                            {good.good_photo.map((photo, index) => {
                                 return photo ?
-                                    <img className="card-img-top" src={photo.photo} alt="Good's poster"/> : null
+                                    <img key={index} className="card-img-top" src={photo.photo} alt="Good's poster"/> : null
                             })}
                         </Slider>
                         <div className="card-body">
@@ -40,11 +42,11 @@ class GoodDetail extends Component {
                             <p className="text-center m-2">Описание Товара</p>
                             <p className="card-text">{good.description}</p>
                         </div>
-
                         <div className="card-footer">
                             <p>Дата поступления товара: {good.arrival_date}</p>
                         </div>
-
+                        <button onClick={() => this.props.addToBasket(good)} type="button" className="btn btn-primary">Добавить в корзину</button>
+                        <NavLink className="text-center m-3" to="/">Оформить заказ</NavLink>
                     </div>
                 </div>
             </Fragment>
@@ -61,6 +63,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         loadGood: (id) => dispatch(loadGood(id)),
+        addToBasket: (data) => dispatch(addToBasket(data))
     }
 };
 
