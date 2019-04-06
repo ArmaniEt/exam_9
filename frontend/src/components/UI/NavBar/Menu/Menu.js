@@ -15,7 +15,7 @@ class Menu extends Component {
 
 
     render() {
-        //const {username, is_admin} = this.props.auth;
+        const {username} = this.props.auth;
         return <Fragment>
             <button onClick={this.toggle}
                     className="navbar-toggler"
@@ -33,6 +33,11 @@ class Menu extends Component {
 
                 </ul>
                 <ul className='navbar-nav ml-auto'>
+                    { username ?
+                        <li className="nav-link text-white">
+                            Привет {username}!
+                        </li> : null
+                    }
                     {[
                         <MenuItem key='login' to="/login">Войти</MenuItem>,
                         <MenuItem to="/logout" key="logout">Выйти</MenuItem>

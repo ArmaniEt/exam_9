@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from webapp.models import Order, Category, Good, Photo
+from rest_framework.exceptions import ValidationError
+from rest_framework.authtoken.models import Token
 
 
 class InlineCategorySerializer(serializers.ModelSerializer):
@@ -39,4 +41,11 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'description')
 
 
+class AuthTokenSerializer(serializers.Serializer):
+    token = serializers.CharField(write_only=True)
 
+    def validate_token(self, token):
+        try:
+            return Token.objects.get(key=token)
+        except Token.DoesNotExist:
+            raise ValidationError("Invalid credentials")

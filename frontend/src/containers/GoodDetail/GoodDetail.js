@@ -45,8 +45,6 @@ class GoodDetail extends Component {
                             <p>Дата поступления товара: {good.arrival_date}</p>
                         </div>
 
-                        {/*<NavLink to={'/goods/' + good.id + '/edit'}*/}
-                        {/*className="btn btn-primary m-2">Edit Good</NavLink>*/}
                     </div>
                 </div>
             </Fragment>
