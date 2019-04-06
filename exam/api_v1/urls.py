@@ -7,9 +7,9 @@ router = routers.DefaultRouter()
 
 # TODO register your views here, also create url patterns
 
-# router.register(r'movies', views.MovieViewSet)
-#
-#
+router.register(r'goods', views.GoodViewSet)
+router.register(r'orders', views.OrderViewSet)
+router.register(r'categories', views.CategoryViewSet)
 app_name = 'api_v1'
 
 urlpatterns = [
