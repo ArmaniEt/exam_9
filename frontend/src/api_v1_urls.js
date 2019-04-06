@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-// const BASE_URL
+const BASE_URL = 'http://localhost:8000/api/v1';
+const GOODS_URL = BASE_URL + '/goods/';
 
 
 const instance = axios.create({
@@ -11,3 +12,4 @@ const instance = axios.create({
 
 
 export default instance;
+export {GOODS_URL}

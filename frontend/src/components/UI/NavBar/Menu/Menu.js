@@ -15,7 +15,7 @@ class Menu extends Component {
 
 
     render() {
-        const {username, is_admin} = this.props.auth;
+        //const {username, is_admin} = this.props.auth;
         return <Fragment>
             <button onClick={this.toggle}
                     className="navbar-toggler"
@@ -29,23 +29,15 @@ class Menu extends Component {
             </button>
             <div className={(this.state.menuCollapse ? "collapse" : "") + " navbar-collapse"} id="navbarNav">
                 <ul className="navbar-nav mr-auto">
-                    <MenuItem to="/">Фильмы</MenuItem>
-                    {is_admin ? <MenuItem to="/movies/create">Добавить фильм</MenuItem> : null}
-                    <MenuItem to='/halls/'>Залы</MenuItem>
-                    {is_admin ? <MenuItem to='/halls/create'>Добавить зал</MenuItem> : null}
+                    <MenuItem to="/">Товары</MenuItem>
 
                 </ul>
                 <ul className='navbar-nav ml-auto'>
+                    {[
+                        <MenuItem key='login' to="/login">Войти</MenuItem>,
+                        <MenuItem to="/logout" key="logout">Выйти</MenuItem>
 
-                    {username ? [
-
-                            <MenuItem to="/personal" key="personal">Личный кабинет</MenuItem>,
-                            <MenuItem to="/logout" key="logout">Выйти</MenuItem>
-                        ]
-                        : [
-                            <MenuItem key='login' to="/login">Войти</MenuItem>,
-                            <MenuItem key='register' to="/register">Зарегистрироваться</MenuItem>
-                        ]}
+                    ]}
                 </ul>
             </div>
         </Fragment>

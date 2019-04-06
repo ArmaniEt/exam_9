@@ -10,8 +10,6 @@ import root from './store/reducers/root';
 import {Provider} from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 
-axios.defaults.baseURL = BASE_URL;
-//TODO set a base url in urls.js
 
 const store = createStore(root, applyMiddleware(thunkMiddleware));
 

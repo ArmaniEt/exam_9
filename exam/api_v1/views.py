@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from webapp.models import Order, Category, Good, Photo
+from webapp.models import Order, Category, Good
 from rest_framework import viewsets
 from api_v1.serializers import GoodCreateSerializer, GoodDisplaySerializer, \
     OrderSerializer, CategorySerializer
