@@ -4,6 +4,7 @@ import {BrowserRouter} from 'react-router-dom';
 import './App.css';
 import Layout from "./components/Layout/Layout";
 import GoodList from "./containers/GoodList/GoodList";
+import GoodDetail from "./containers/GoodDetail/GoodDetail";
 
 class App extends Component {
     render() {
@@ -11,7 +12,8 @@ class App extends Component {
             <BrowserRouter>
                 <Layout>
                     <Switch>
-                       <Route path="/" component={GoodList}/>
+                        <Route path="/goods/:id" component={GoodDetail}/>
+                        <Route path="/" component={GoodList}/>
                     </Switch>
                 </Layout>
             </BrowserRouter>

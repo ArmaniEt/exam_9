@@ -2,6 +2,7 @@ import React, {Fragment, Component} from 'react';
 import GoodCard from "../../components/GoodCard/GoodCard";
 import {connect} from "react-redux";
 import {loadGoods} from "../../store/actions/good-list";
+import Select from "react-select";
 
 
 class GoodList extends Component {
@@ -9,9 +10,32 @@ class GoodList extends Component {
         this.props.loadGoods();
     }
 
+    // state = {
+    //     categories: []
+    // };
+
     // redirectTo = () => {
     //     this.props.history.push('/login')
     // };
+
+    //
+    // getCategoryOptions = () => {
+    //     return this.props.goods.categories.map(category => {
+    //         return {value: category.id, label: category.name}
+    //     })
+    // };
+    //
+    // getCategoryValue = () => {
+    //     if (this.props.goods.categories.length > 0) {
+    //         return this.props.goods.categories.map(id => {
+    //             const category = this.state.categories.find(category => category.id === id);
+    //             return {value: id, label: category.name}
+    //         })
+    //     }
+    //     return [];
+    // };
+
+
 
     render() {
         return (
